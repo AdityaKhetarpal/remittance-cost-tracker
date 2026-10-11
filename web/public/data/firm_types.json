@@ -1,0 +1,38 @@
+[
+ {
+  "firm_type": "Bank",
+  "services": 955,
+  "avg_cost_pct": 12.64,
+  "avg_loss_usd_on_200": 25.28
+ },
+ {
+  "firm_type": "Bank / Money Transfer Operator",
+  "services": 76,
+  "avg_cost_pct": 7.54,
+  "avg_loss_usd_on_200": 15.09
+ },
+ {
+  "firm_type": "Post Office",
+  "services": 8,
+  "avg_cost_pct": 5.59,
+  "avg_loss_usd_on_200": 11.17
+ },
+ {
+  "firm_type": "Mobile Operator",
+  "services": 22,
+  "avg_cost_pct": 5.04,
+  "avg_loss_usd_on_200": 10.07
+ },
+ {
+  "firm_type": "Money Transfer Operator",
+  "services": 5238,
+  "avg_cost_pct": 4.68,
+  "avg_loss_usd_on_200": 9.36
+ },
+ {
+  "firm_type": "Money Transfer Operator / Post Office",
+  "services": 61,
+  "avg_cost_pct": 4.23,
+  "avg_loss_usd_on_200": 8.46
+ }
+]

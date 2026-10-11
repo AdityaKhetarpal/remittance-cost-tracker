@@ -2,7 +2,9 @@
 
 How much it costs to send **$200** home, by route, by type of company and by channel, using the World Bank's Remittance Prices Worldwide data (Q2 2016 to Q3 2025).
 
-**Status:** analysis in progress (notebook). Next: a model of what drives cost, then a live dashboard.
+**Live site:** [X] (add the Vercel link after deploying)
+
+**Status:** first results live. Next: the full route list from the latest notebook run, then a model of what drives cost.
 
 ## The problem
 
@@ -47,6 +49,26 @@ Notebook: [`notebooks/remittance_analysis.ipynb`](notebooks/remittance_analysis.
 5. SQL in DuckDB: global average (by service and by route), trend by quarter, routes, company type, channel, region, and routes into India.
 6. Save every result table as CSV.
 
+## The website
+
+| Page | What it does |
+|---|---|
+| Overview | "You send $200" calculator (pick a route, see what arrives, what's lost and what switching saves); cost by company type, region and quarter; most and least expensive routes |
+| Routes | Search and sort every route; pick one for its average, cheapest and (with full data) every company's price |
+| Map | World map coloured by the average cost of sending money to or from each country (shown once the full route list is added) |
+| India | Cost of sending $200 to India from 20 countries, and the yearly saving from switching to the cheapest service |
+| Method | Steps, definitions, the 5.91% vs 6.36% check, limitations and sources |
+
+Built with Next.js and plain CSS, hand-drawn SVG charts, no tracking and no API keys.
+
+## Automation
+
+- `pipeline/build_data.py` reads the notebook's result tables in `data/outputs/`, stops on missing tables, impossible costs or repeated routes, and writes the JSON the website reads.
+- `.github/workflows/ci.yml` runs on every push: the pipeline, lint, tests and a production build.
+- Vercel redeploys the site automatically on every push to `main`.
+
+**Updating the data:** run the notebook, copy the CSVs from `remittance/outputs` in Google Drive into `data/outputs/`, run `python pipeline/build_data.py`, commit and push.
+
 ## Limitations
 
 - The World Bank file has no data for Q2 2025 (it goes from Q1 2025 to Q3 2025).
@@ -56,7 +78,20 @@ Notebook: [`notebooks/remittance_analysis.ipynb`](notebooks/remittance_analysis.
 
 ## Run it yourself
 
-Open the notebook in Google Colab and choose **Runtime → Restart session and run all**. It creates a `remittance` folder in your Google Drive, downloads the data and saves results in `remittance/outputs`.
+```bash
+# 1. the analysis: open notebooks/remittance_analysis.ipynb in Google Colab
+#    and choose Runtime -> Restart session and run all
+
+# 2. rebuild the website data (Python 3.12)
+pip install -r pipeline/requirements.txt
+python pipeline/build_data.py
+
+# 3. run the website (Node 20.9+)
+cd web
+npm install
+npm test
+npm run dev        # http://localhost:3000
+```
 
 ---
 

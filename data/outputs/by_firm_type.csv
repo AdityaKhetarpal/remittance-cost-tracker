@@ -1,0 +1,7 @@
+firm_type,services,avg_cost_pct,avg_loss_usd_on_200
+Bank,955,12.64,25.28
+Bank / Money Transfer Operator,76,7.54,15.09
+Post Office,8,5.59,11.17
+Mobile Operator,22,5.04,10.07
+Money Transfer Operator,5238,4.68,9.36
+Money Transfer Operator / Post Office,61,4.23,8.46

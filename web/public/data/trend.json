@@ -1,0 +1,50 @@
+[
+ {
+  "period_label": "2023 Q3",
+  "period_order": 20233,
+  "avg_cost_pct": 6.13,
+  "services": 7485
+ },
+ {
+  "period_label": "2023 Q4",
+  "period_order": 20234,
+  "avg_cost_pct": 6.25,
+  "services": 7522
+ },
+ {
+  "period_label": "2024 Q1",
+  "period_order": 20241,
+  "avg_cost_pct": 6.21,
+  "services": 7375
+ },
+ {
+  "period_label": "2024 Q2",
+  "period_order": 20242,
+  "avg_cost_pct": 6.5,
+  "services": 7233
+ },
+ {
+  "period_label": "2024 Q3",
+  "period_order": 20243,
+  "avg_cost_pct": 6.43,
+  "services": 6549
+ },
+ {
+  "period_label": "2024 Q4",
+  "period_order": 20244,
+  "avg_cost_pct": 6.17,
+  "services": 6502
+ },
+ {
+  "period_label": "2025 Q1",
+  "period_order": 20251,
+  "avg_cost_pct": 6.16,
+  "services": 6522
+ },
+ {
+  "period_label": "2025 Q3",
+  "period_order": 20253,
+  "avg_cost_pct": 5.91,
+  "services": 6360
+ }
+]

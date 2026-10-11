@@ -1,0 +1,21 @@
+corridor,send_country,receive_country,receive_region,services,avg_cost_pct,cheapest_pct,gap_to_3pct,avg_loss_usd_on_200,cheapest_loss_usd_on_200
+SENMLI,Senegal,Mali,Sub-Saharan Africa,6,25.70,1.50,22.70,51.39,3.00
+ARESDN,United Arab Emirates,Sudan,Sub-Saharan Africa,4,25.58,2.97,22.58,51.15,5.94
+ZAFMWI,South Africa,Malawi,Sub-Saharan Africa,13,23.93,0.39,20.93,47.86,0.78
+ZAFCHN,South Africa,China,East Asia & Pacific,11,23.88,3.76,20.88,47.76,7.52
+QATSDN,Qatar,Sudan,Sub-Saharan Africa,3,23.20,2.23,20.20,46.41,4.46
+RWAKEN,Rwanda,Kenya,Sub-Saharan Africa,7,22.56,2.38,19.56,45.13,4.76
+ZAFAGO,South Africa,Angola,Sub-Saharan Africa,13,21.39,6.12,18.39,42.78,12.24
+BRABOL,Brazil,Bolivia,Latin America & Caribbean,7,18.42,5.79,15.42,36.85,11.58
+TURBGR,Türkiye,Bulgaria,Europe & Central Asia,3,17.56,13.20,14.56,35.13,26.40
+ZAFTZA,South Africa,Tanzania,Sub-Saharan Africa,16,17.30,6.13,14.30,34.59,12.26
+QATLKA,Qatar,Sri Lanka,South Asia,6,2.34,0.71,-0.66,4.69,1.42
+JOREGY,Jordan,"Egypt, Arab Rep.","Middle East, North Africa, Afghanistan & Pakistan",13,2.30,1.29,-0.70,4.60,2.58
+BHRIND,Bahrain,India,South Asia,10,2.17,0.24,-0.83,4.35,0.48
+KWTPAK,Kuwait,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",10,2.05,1.42,-0.95,4.10,2.84
+GBRNGA,United Kingdom,Nigeria,Sub-Saharan Africa,30,2.03,0.01,-0.97,4.05,0.02
+AUSPAK,Australia,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",23,2.00,0.77,-1.00,4.01,1.54
+GBRIND,United Kingdom,India,South Asia,28,1.91,0.15,-1.09,3.81,0.30
+BHRPAK,Bahrain,Pakistan,"Middle East, North Africa, Afghanistan & Pakistan",5,1.39,0.47,-1.61,2.78,0.94
+BELDZA,Belgium,Algeria,"Middle East, North Africa, Afghanistan & Pakistan",6,1.29,1.09,-1.71,2.58,2.18
+MYSMMR,Malaysia,Myanmar,East Asia & Pacific,6,0.29,0.05,-2.71,0.57,0.10

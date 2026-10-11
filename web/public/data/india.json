@@ -1,0 +1,142 @@
+[
+ {
+  "send_country": "South Africa",
+  "services": 15,
+  "avg_cost_pct": 16.39,
+  "cheapest_pct": 5.29,
+  "yearly_saving_usd": 266.34
+ },
+ {
+  "send_country": "Thailand",
+  "services": 21,
+  "avg_cost_pct": 12.59,
+  "cheapest_pct": 0.72,
+  "yearly_saving_usd": 284.9
+ },
+ {
+  "send_country": "Japan",
+  "services": 22,
+  "avg_cost_pct": 8.72,
+  "cheapest_pct": 1.22,
+  "yearly_saving_usd": 180.09
+ },
+ {
+  "send_country": "Germany",
+  "services": 27,
+  "avg_cost_pct": 6.78,
+  "cheapest_pct": 1.35,
+  "yearly_saving_usd": 130.24
+ },
+ {
+  "send_country": "Australia",
+  "services": 35,
+  "avg_cost_pct": 6.39,
+  "cheapest_pct": 0.54,
+  "yearly_saving_usd": 140.41
+ },
+ {
+  "send_country": "France",
+  "services": 28,
+  "avg_cost_pct": 6.33,
+  "cheapest_pct": 1.4,
+  "yearly_saving_usd": 118.38
+ },
+ {
+  "send_country": "Saudi Arabia",
+  "services": 12,
+  "avg_cost_pct": 5.59,
+  "cheapest_pct": 3.14,
+  "yearly_saving_usd": 58.86
+ },
+ {
+  "send_country": "Sweden",
+  "services": 24,
+  "avg_cost_pct": 5.48,
+  "cheapest_pct": 0.72,
+  "yearly_saving_usd": 114.24
+ },
+ {
+  "send_country": "New Zealand",
+  "services": 33,
+  "avg_cost_pct": 4.68,
+  "cheapest_pct": 0.47,
+  "yearly_saving_usd": 101.14
+ },
+ {
+  "send_country": "Canada",
+  "services": 32,
+  "avg_cost_pct": 4.28,
+  "cheapest_pct": 0.86,
+  "yearly_saving_usd": 82.13
+ },
+ {
+  "send_country": "Italy",
+  "services": 18,
+  "avg_cost_pct": 4.24,
+  "cheapest_pct": 0.39,
+  "yearly_saving_usd": 92.37
+ },
+ {
+  "send_country": "United States",
+  "services": 45,
+  "avg_cost_pct": 3.77,
+  "cheapest_pct": 0.42,
+  "yearly_saving_usd": 80.41
+ },
+ {
+  "send_country": "United Arab Emirates",
+  "services": 24,
+  "avg_cost_pct": 3.72,
+  "cheapest_pct": 0.77,
+  "yearly_saving_usd": 70.68
+ },
+ {
+  "send_country": "Malaysia",
+  "services": 17,
+  "avg_cost_pct": 3.33,
+  "cheapest_pct": 1.24,
+  "yearly_saving_usd": 50.26
+ },
+ {
+  "send_country": "Oman",
+  "services": 11,
+  "avg_cost_pct": 3.3,
+  "cheapest_pct": 2.37,
+  "yearly_saving_usd": 22.32
+ },
+ {
+  "send_country": "Singapore",
+  "services": 28,
+  "avg_cost_pct": 2.92,
+  "cheapest_pct": 0.5,
+  "yearly_saving_usd": 58.13
+ },
+ {
+  "send_country": "Qatar",
+  "services": 7,
+  "avg_cost_pct": 2.5,
+  "cheapest_pct": 1.33,
+  "yearly_saving_usd": 28.15
+ },
+ {
+  "send_country": "Kuwait",
+  "services": 30,
+  "avg_cost_pct": 2.37,
+  "cheapest_pct": 1.65,
+  "yearly_saving_usd": 17.36
+ },
+ {
+  "send_country": "Bahrain",
+  "services": 10,
+  "avg_cost_pct": 2.17,
+  "cheapest_pct": 0.24,
+  "yearly_saving_usd": 46.39
+ },
+ {
+  "send_country": "United Kingdom",
+  "services": 28,
+  "avg_cost_pct": 1.91,
+  "cheapest_pct": 0.15,
+  "yearly_saving_usd": 42.13
+ }
+]

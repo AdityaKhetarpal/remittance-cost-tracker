@@ -1,0 +1,37 @@
+[
+ {
+  "receive_region": "Sub-Saharan Africa",
+  "corridors": 83,
+  "avg_cost_pct": 7.36
+ },
+ {
+  "receive_region": "Europe & Central Asia",
+  "corridors": 41,
+  "avg_cost_pct": 5.76
+ },
+ {
+  "receive_region": "East Asia & Pacific",
+  "corridors": 73,
+  "avg_cost_pct": 5.69
+ },
+ {
+  "receive_region": "Latin America & Caribbean",
+  "corridors": 41,
+  "avg_cost_pct": 5.6
+ },
+ {
+  "receive_region": "Middle East, North Africa, Afghanistan & Pakistan",
+  "corridors": 55,
+  "avg_cost_pct": 5.33
+ },
+ {
+  "receive_region": "South Asia",
+  "corridors": 50,
+  "avg_cost_pct": 5.27
+ },
+ {
+  "receive_region": "Unknown",
+  "corridors": 5,
+  "avg_cost_pct": 3.53
+ }
+]

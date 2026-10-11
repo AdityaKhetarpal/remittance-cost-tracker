@@ -9,3 +9,7 @@ __pycache__/
 # secrets
 .env
 .env.*
+
+# website build output (web/ has its own .gitignore too)
+web/node_modules/
+web/.next/
