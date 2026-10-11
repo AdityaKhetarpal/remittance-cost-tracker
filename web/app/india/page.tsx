@@ -4,6 +4,8 @@ import HBars from "@/components/HBars";
 import { lossUsd, pct, usd } from "@/lib/calc";
 import meta from "@/public/data/meta.json";
 import india from "@/public/data/india.json";
+import sources from "@/public/data/india_sources.json";
+import ContextCards from "@/components/ContextCards";
 
 export const metadata: Metadata = { title: "India · Remittance Cost Tracker" };
 
@@ -23,6 +25,36 @@ export default function IndiaPage() {
         It depends on where the money starts. From {cheapest.send_country} the average service takes {pct(cheapest.avg_cost_pct)};
         from {dearest.send_country}, {pct(dearest.avg_cost_pct)}. {under} of {india.length} sending countries are at or under the {TARGET}% target.
       </p>
+
+      <section className="section">
+        <ContextCards keys={["india_inflows", "india_fy26"]} />
+      </section>
+
+      <section className="section">
+        <div className="section-head">
+          <h2>Where India&apos;s money comes from, and what it costs</h2>
+          <p>
+            The five biggest sending countries made up {sources.reduce((a, r) => a + r.share_pct, 0).toFixed(1)}% of India&apos;s remittances in {sources[0].period} (RBI survey).
+            Their cost to send $200 in {meta.latest_quarter}:
+          </p>
+        </div>
+        <div className="panel table-wrap" style={{ padding: 8 }}>
+          <table>
+            <thead><tr><th>From</th><th className="num">Share of India&apos;s inflows</th><th className="num">Average cost</th><th className="num">Cheapest</th><th>Source</th></tr></thead>
+            <tbody>
+              {sources.map((r) => (
+                <tr key={r.send_country}>
+                  <td>{r.send_country}</td>
+                  <td className="num"><strong>{r.share_pct.toFixed(1)}%</strong></td>
+                  <td className="num">{r.avg_cost_pct !== null ? <span className={`pill ${r.avg_cost_pct <= TARGET ? "pill-cheap" : "pill-loss"}`}>{pct(r.avg_cost_pct)}</span> : "–"}</td>
+                  <td className="num">{r.cheapest_pct !== null ? pct(r.cheapest_pct) : "–"}</td>
+                  <td className="muted"><a href={r.url} target="_blank" rel="noreferrer">{r.source}</a><span className={`badge badge-${r.status}`}>{r.status}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
 
       <section className="section">
         <div className="section-head">

@@ -1,0 +1,112 @@
+{
+ "lmic_flows": {
+  "key": "lmic_flows",
+  "label": "Sent home to low- and middle-income countries",
+  "value": 728.6,
+  "unit": "US$ billion",
+  "period": "2025",
+  "source": "IFAD, Sending Money Home 2026 (via Jamaica Gleaner)",
+  "url": "https://jamaica-gleaner.com/article/news/20260916/remittances-nearly-double-decade-migrants-send-home-us729-billion-2025",
+  "published": "2026-09-15",
+  "status": "reported"
+ },
+ "india_inflows": {
+  "key": "india_inflows",
+  "label": "Received by India, the world's largest recipient",
+  "value": 150.7,
+  "unit": "US$ billion",
+  "period": "2025",
+  "source": "IFAD, Sending Money Home 2026 (via The American Bazaar)",
+  "url": "https://americanbazaaronline.com/2026/09/15/us-largest-source-remittances-india-150-7-billion-2025-488218/",
+  "published": "2026-09-15",
+  "status": "reported"
+ },
+ "india_fy26": {
+  "key": "india_fy26",
+  "label": "India's net private transfers (mostly remittances)",
+  "value": 144.8,
+  "unit": "US$ billion",
+  "period": "FY 2025-26",
+  "source": "RBI balance of payments, Lok Sabha reply (via The Tribune)",
+  "url": "https://www.tribuneindia.com/news/business/indias-net-private-transfers-rise-to-record-usd-144-8-billion-in-fy25-26-centre-says-no-war-wise-remittance-data-maintained/",
+  "published": "2026-07-21",
+  "status": "reported"
+ },
+ "wb_avg": {
+  "key": "wb_avg",
+  "label": "Global average cost of sending $200",
+  "value": 6.36,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ },
+ "wb_weighted": {
+  "key": "wb_weighted",
+  "label": "Weighted average (by size of flows)",
+  "value": 5.04,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ },
+ "wb_smart": {
+  "key": "wb_smart",
+  "label": "SmaRT average (3 cheapest services per route)",
+  "value": 3.29,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ },
+ "wb_digital": {
+  "key": "wb_digital",
+  "label": "Digital transfers (non-digital: 7.30%)",
+  "value": 4.59,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ },
+ "wb_non_digital": {
+  "key": "wb_non_digital",
+  "label": "Non-digital transfers",
+  "value": 7.3,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ },
+ "wb_banks": {
+  "key": "wb_banks",
+  "label": "Banks",
+  "value": 14.99,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ },
+ "wb_mtos": {
+  "key": "wb_mtos",
+  "label": "Money transfer operators",
+  "value": 4.72,
+  "unit": "%",
+  "period": "Q3 2025",
+  "source": "World Bank, Remittance Prices Worldwide Issue 54",
+  "url": "https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf",
+  "published": "",
+  "status": "official"
+ }
+}

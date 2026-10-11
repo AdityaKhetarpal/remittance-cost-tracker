@@ -1,0 +1,46 @@
+# Every Monday: check whether the World Bank has published a newer Remittance Prices Worldwide edition.
+# If it has, open an issue so the notebook can be re-run with the new file. Nothing is changed automatically.
+name: Check for new World Bank data
+
+on:
+  schedule:
+    - cron: "30 3 * * 1"   # Monday 09:00 India time
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Look for newer editions
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          found=""
+          # editions after Q3 2025, newest first
+          for q in 2027_q1 2026_q4 2026_q3 2026_q2 2026_q1 2025_q4; do
+            for url in \
+              "https://datacatalogfiles.worldbank.org/ddh-published/0037898/DR0095523/rpw_dataset_2011_${q}.xlsx" \
+              "https://remittanceprices.worldbank.org/sites/default/files/rpw_dataset_2011_${q}.xlsx"; do
+              if curl -sfIL --max-time 30 "$url" >/dev/null; then found="$q $url"; break 2; fi
+            done
+          done
+          # the website's own "what's new" text, as a second signal
+          page=$(curl -sL --max-time 30 https://remittanceprices.worldbank.org/ || true)
+          for q in "Q1 2026" "Q2 2026" "Q3 2026" "Q4 2026" "Q1 2027"; do
+            if echo "$page" | grep -q "$q"; then found="${found:-$q mentioned on remittanceprices.worldbank.org}"; fi
+          done
+
+          if [ -z "$found" ]; then echo "No newer edition than Q3 2025 yet."; exit 0; fi
+          echo "Found: $found"
+          title="New World Bank remittance price data available"
+          if gh issue list -R "$REPO" --state open --search "$title in:title" --json number --jq 'length' | grep -qv '^0$'; then
+            echo "Issue already open."; exit 0
+          fi
+          gh issue create -R "$REPO" --title "$title" --body "A newer Remittance Prices Worldwide edition looks available: $found
+
+          Next steps: update URL and XLSX in step 4 of the notebook, run it, copy the CSVs into data/outputs/, run pipeline/build_data.py and push."

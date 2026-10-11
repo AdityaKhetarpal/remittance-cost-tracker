@@ -12,6 +12,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 IN = ROOT / "data" / "outputs"
+RAW = ROOT / "data" / "raw"   # hand-collected context figures, each with a source, date and status
 OUT = ROOT / "web" / "public" / "data"
 
 WB_PUBLISHED_AVG = 6.36   # World Bank global average, Q3 2025 (remittanceprices.worldbank.org)
@@ -106,6 +107,18 @@ def main():
     write("india", records(india.sort_values("avg_cost_pct", ascending=False)))
     write("channels", records(channels) if channels is not None else [])
     write("method_check", records(method_check) if method_check is not None else [])
+
+    # ---- context from newer publications (2026), each row with its source ----
+    context = pd.read_csv(RAW / "context.csv", dtype={"published": str}).fillna("")
+    if context["key"].duplicated().any() or not context["status"].isin(["official", "reported"]).all():
+        raise SystemExit("STOP: context.csv has a repeated key or an unknown status")
+    write("context", {r["key"]: r for r in records(context)})
+
+    shares = pd.read_csv(RAW / "india_source_shares.csv")
+    if shares["share_pct"].sum() > 100:
+        raise SystemExit("STOP: India source shares add up to more than 100%")
+    india_sources = shares.merge(india[["send_country", "avg_cost_pct", "cheapest_pct"]], on="send_country", how="left")
+    write("india_sources", records(india_sources))
 
     if services is not None:
         check_costs(services, ["cost_pct"], "corridor_services")

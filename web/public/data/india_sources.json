@@ -1,0 +1,52 @@
+[
+ {
+  "send_country": "United States",
+  "share_pct": 27.7,
+  "period": "FY 2023-24",
+  "source": "RBI Bulletin, March 2025 (6th survey round), via Business Standard",
+  "url": "https://www.business-standard.com/amp/economy/news/remittances-to-india-from-advanced-economies-surpass-gulf-inflows-rbi-125031901164_1.html",
+  "status": "reported",
+  "avg_cost_pct": 3.77,
+  "cheapest_pct": 0.42
+ },
+ {
+  "send_country": "United Arab Emirates",
+  "share_pct": 19.2,
+  "period": "FY 2023-24",
+  "source": "RBI Bulletin, March 2025 (6th survey round), via Business Standard",
+  "url": "https://www.business-standard.com/amp/economy/news/remittances-to-india-from-advanced-economies-surpass-gulf-inflows-rbi-125031901164_1.html",
+  "status": "reported",
+  "avg_cost_pct": 3.72,
+  "cheapest_pct": 0.77
+ },
+ {
+  "send_country": "United Kingdom",
+  "share_pct": 10.8,
+  "period": "FY 2023-24",
+  "source": "RBI Bulletin, March 2025 (6th survey round), via Business Standard",
+  "url": "https://www.business-standard.com/amp/economy/news/remittances-to-india-from-advanced-economies-surpass-gulf-inflows-rbi-125031901164_1.html",
+  "status": "reported",
+  "avg_cost_pct": 1.91,
+  "cheapest_pct": 0.15
+ },
+ {
+  "send_country": "Saudi Arabia",
+  "share_pct": 6.7,
+  "period": "FY 2023-24",
+  "source": "RBI survey, via The American Bazaar",
+  "url": "https://americanbazaaronline.com/2026/09/15/us-largest-source-remittances-india-150-7-billion-2025-488218/",
+  "status": "reported",
+  "avg_cost_pct": 5.59,
+  "cheapest_pct": 3.14
+ },
+ {
+  "send_country": "Singapore",
+  "share_pct": 6.6,
+  "period": "FY 2023-24",
+  "source": "RBI survey, via The American Bazaar",
+  "url": "https://americanbazaaronline.com/2026/09/15/us-largest-source-remittances-india-150-7-billion-2025-488218/",
+  "status": "reported",
+  "avg_cost_pct": 2.92,
+  "cheapest_pct": 0.5
+ }
+]

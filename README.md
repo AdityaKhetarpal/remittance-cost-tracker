@@ -32,6 +32,11 @@ The World Bank publishes a global average of 6.36% for Q3 2025. Step 17 of the n
 |---|---|---|
 | `rpw_dataset_2011_2025_q3.xlsx` (not stored in the repo, downloaded by the notebook) | One row per service, route and quarter, 204,469 rows, 47 columns | World Bank, Remittance Prices Worldwide |
 
+| `data/raw/context.csv` | Newer headline figures: 2025 flows (IFAD *Sending Money Home 2026*, Sep 2026), India FY 2025-26 (RBI via Parliament, Jul 2026), World Bank Q3 2025 breakdowns | Each row has its source link, period and status (official / reported) | |
+| `data/raw/india_source_shares.csv` | Where India's remittances come from (US 27.7%, UAE 19.2%, UK 10.8%, ...) | RBI survey, FY 2023-24 | Reported |
+
+**Freshness:** Q3 2025 is the latest World Bank price edition (checked October 2026). `.github/workflows/check-new-data.yml` checks every Monday for a newer one and opens an issue when it appears.
+
 Full source note: [`data/SOURCES.md`](data/SOURCES.md). The raw file is about 50 MB, so the notebook downloads it instead of storing it here.
 
 ## Method

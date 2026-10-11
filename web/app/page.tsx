@@ -3,6 +3,7 @@ import Link from "next/link";
 import LossCalculator from "@/components/LossCalculator";
 import HBars from "@/components/HBars";
 import TrendChart from "@/components/TrendChart";
+import ContextCards from "@/components/ContextCards";
 import { lossUsd, pct, timesMore, usd } from "@/lib/calc";
 import meta from "@/public/data/meta.json";
 import trend from "@/public/data/trend.json";
@@ -24,7 +25,7 @@ export default function Home() {
   return (
     <>
       {/* ---------- hero: one $200 transfer ---------- */}
-      <p className="eyebrow">World Bank data · {meta.latest_quarter}</p>
+      <p className="eyebrow">World Bank prices · {meta.latest_quarter}, the latest edition · Flows to 2025-26</p>
       <h1>Send $200 home, and <em>{usd(lossUsd(meta.avg_cost_pct))}</em> never arrives.</h1>
       <p className="lead">
         On average, {pct(meta.avg_cost_pct)} of every $200 is lost to fees and a hidden exchange-rate margin. That&apos;s{" "}
@@ -53,6 +54,18 @@ export default function Home() {
             <p className="stat-note">services on {meta.corridors} routes</p>
           </div>
         </div>
+      </section>
+
+      {/* ---------- the bigger picture: newer releases ---------- */}
+      <section className="section">
+        <div className="section-head">
+          <h2>Why it matters: record flows in 2025-26</h2>
+          <p>Newest published figures on how much money moves. Every card links to its source; “reported” means taken from a news report of the publication.</p>
+        </div>
+        <ContextCards keys={["lmic_flows", "india_inflows", "india_fy26", "wb_digital"]} />
+        <p className="note">
+          At {pct(meta.avg_cost_pct)}, every $1 billion sent home loses about ${(meta.avg_cost_pct * 10).toFixed(0)} million on the way, if all of it moved in $200 transfers at the average price.
+        </p>
       </section>
 
       {/* ---------- who charges most ---------- */}

@@ -54,3 +54,24 @@ describe("the data files agree with each other", () => {
     for (const c of corridors) expect(c.corridor).toBe(c.send_iso3 + c.receive_iso3);
   });
 });
+
+import context from "@/public/data/context.json";
+import indiaSources from "@/public/data/india_sources.json";
+
+describe("newer context figures carry their sources", () => {
+  it("every figure has a link, a period and a status", () => {
+    for (const c of Object.values(context)) {
+      expect(c.url).toMatch(/^https:\/\//);
+      expect(c.period).not.toBe("");
+      expect(["official", "reported"]).toContain(c.status);
+    }
+  });
+
+  it("the World Bank average in the context file matches meta", () => {
+    expect(context.wb_avg.value).toBe(meta.wb_published_avg_pct);
+  });
+
+  it("India's top sending countries all have a cost on this site", () => {
+    for (const r of indiaSources) expect(r.avg_cost_pct).not.toBeNull();
+  });
+});

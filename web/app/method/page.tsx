@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { pct } from "@/lib/calc";
 import meta from "@/public/data/meta.json";
 import methodCheck from "@/public/data/method_check.json";
+import context from "@/public/data/context.json";
+import firmTypes from "@/public/data/firm_types.json";
 
 export const metadata: Metadata = { title: "Method · Remittance Cost Tracker" };
 
@@ -66,6 +68,30 @@ export default function MethodPage() {
       </section>
 
       <section className="section">
+        <h2>How fresh is this?</h2>
+        <ul className="limits">
+          <li><strong>Prices:</strong> {meta.latest_quarter} is the latest edition of the World Bank&apos;s Remittance Prices Worldwide (checked October 2026; no newer data file published yet). A GitHub workflow checks every Monday for a new edition and opens an issue when one appears.</li>
+          <li><strong>Flows:</strong> 2025 totals from IFAD&apos;s <em>Sending Money Home 2026</em> (September 2026) and India&apos;s FY 2025-26 figure from RBI balance-of-payments data, given in Parliament in July 2026.</li>
+          <li><strong>World Bank&apos;s own breakdowns</strong> for {meta.latest_quarter}, for comparison with this site&apos;s numbers:</li>
+        </ul>
+        <div className="panel table-wrap" style={{ padding: 8, marginTop: 12 }}>
+          <table>
+            <thead><tr><th>Measure</th><th className="num">World Bank</th><th>Source</th></tr></thead>
+            <tbody>
+              {Object.values(context).filter((c) => c.key.startsWith("wb_")).map((c) => (
+                <tr key={c.key}><td>{c.label}</td><td className="num">{c.value.toFixed(2)}%</td><td className="muted"><a href={c.url} target="_blank" rel="noreferrer">{c.source}</a></td></tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="note">
+          This site: banks {pct(firmTypes.find((f) => f.firm_type === "Bank")?.avg_cost_pct ?? NaN)}, money transfer operators{" "}
+          {pct(firmTypes.find((f) => f.firm_type === "Money Transfer Operator")?.avg_cost_pct ?? NaN)}. The gaps are likely due to the 0% to 50% filter
+          and to services labelled with two company types, which this site keeps as separate groups.
+        </p>
+      </section>
+
+      <section className="section">
         <h2>Limitations</h2>
         <ul className="limits">
           <li>Costs are for sending $200 only; larger transfers usually cost a smaller share.</li>
@@ -80,6 +106,10 @@ export default function MethodPage() {
         <h2>Sources</h2>
         <ul className="sources">
           <li><a href="https://remittanceprices.worldbank.org/" target="_blank" rel="noreferrer">World Bank, Remittance Prices Worldwide</a>: the price data and the published {pct(meta.wb_published_avg_pct)} global average.</li>
+          {Object.values(context).filter((c) => !c.key.startsWith("wb_")).map((c) => (
+            <li key={c.key}><a href={c.url} target="_blank" rel="noreferrer">{c.source}</a>: {c.label.toLowerCase()}, {c.period} ({c.status}).</li>
+          ))}
+          <li><a href="https://remittanceprices.worldbank.org/sites/default/files/2026-04/RPW_main_report_and_annex_Q325.pdf" target="_blank" rel="noreferrer">World Bank, Remittance Prices Worldwide Issue 54 report</a>: weighted, SmaRT, digital and company-type averages.</li>
           <li><a href="https://github.com/AdityaKhetarpal/remittance-cost-tracker/blob/main/notebooks/remittance_analysis.ipynb" target="_blank" rel="noreferrer">The analysis notebook</a>: every step from download to result tables.</li>
           <li><a href="https://github.com/AdityaKhetarpal/remittance-cost-tracker/blob/main/pipeline/build_data.py" target="_blank" rel="noreferrer">The data pipeline</a>: checks and the files behind this site.</li>
         </ul>
