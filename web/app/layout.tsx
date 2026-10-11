@@ -1,8 +1,7 @@
 // The frame around every page: fonts, header with menu, footer with name and links
 import type { Metadata } from "next";
 import Link from "next/link";
-import "@fontsource-variable/fraunces"; // headline font
-import "@fontsource-variable/public-sans"; // body font
+import "@fontsource-variable/inter"; // one standard business font for the whole site
 import "./globals.css";
 import Nav from "@/components/Nav";
 import meta from "@/public/data/meta.json";

@@ -23,8 +23,9 @@
   --m3: #c77a76;
   --m4: #8d2a5b;
   --m-none: #e9e3d6;
-  --font-display: "Fraunces Variable", Georgia, serif;
-  --font-body: "Public Sans Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* one plain, widely used business font for everything (Inter), with system fallbacks */
+  --font-display: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color-scheme: light;
 }
 
@@ -62,18 +63,19 @@ body {
   background: var(--page);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.55;
+  font-feature-settings: "tnum" 1, "cv11" 1;
   font-variant-numeric: tabular-nums;
 }
 a { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 
-h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; font-optical-sizing: auto; }
-h1 { font-size: clamp(2.2rem, 5.2vw, 3.8rem); line-height: 1.04; font-weight: 600; letter-spacing: -0.025em; max-width: 17ch; }
-h1 em { font-style: italic; color: var(--loss); font-weight: 600; }
-h2 { font-size: clamp(1.4rem, 2.7vw, 1.85rem); line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; }
+h1, h2, h3 { font-family: var(--font-display); color: var(--ink); margin: 0; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.75rem); line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; max-width: 24ch; }
+h1 em { font-style: normal; color: var(--loss); }
+h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); line-height: 1.25; font-weight: 650; letter-spacing: -0.01em; }
 h3 { font-size: 1.15rem; font-weight: 600; }
 p { margin: 0; }
 
@@ -82,7 +84,7 @@ p { margin: 0; }
 /* ---------- header & footer ---------- */
 .site-header { background: var(--surface); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 10; }
 .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; min-height: 62px; }
-.site-name { font-family: var(--font-display); font-weight: 600; font-size: 1.12rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.site-name { font-family: var(--font-display); font-weight: 650; font-size: 1.02rem; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .site-mark { width: 26px; height: 14px; position: relative; }
 .site-mark::before, .site-mark::after { content: ""; position: absolute; top: 3px; width: 8px; height: 8px; border-radius: 50%; }
 .site-mark::before { left: 0; background: var(--cheap); }
@@ -140,7 +142,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 .compare > div { padding: 16px 18px; border-left: 1px solid var(--rule); }
 .compare > div:first-child { border-left: 0; }
 .compare span { display: block; color: var(--ink-2); font-size: 0.88rem; }
-.compare strong { display: block; font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; line-height: 1.1; margin-top: 4px; }
+.compare strong { display: block; font-family: var(--font-display); font-size: 1.7rem; font-weight: 650; line-height: 1.1; margin-top: 4px; }
 .compare small { color: var(--ink-3); font-size: 0.8rem; }
 .is-loss { color: var(--loss); }
 .is-cheap { color: var(--cheap); }
@@ -155,7 +157,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); margin: 4px 0 0;
 .stat:first-child { border-top: 0; }
 @media (min-width: 760px) { .stat { border-top: 0; border-left: 1px solid var(--rule); } .stat:first-child { border-left: 0; } }
 .stat-label { color: var(--ink-2); font-size: 0.95rem; }
-.stat-value { font-family: var(--font-display); font-size: 2.3rem; font-weight: 600; letter-spacing: -0.02em; margin: 4px 0 2px; }
+.stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 650; letter-spacing: -0.02em; margin: 4px 0 2px; }
 .stat-note { color: var(--ink-3); font-size: 0.875rem; }
 
 /* ---------- charts ---------- */
