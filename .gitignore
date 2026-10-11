@@ -1,0 +1,11 @@
+# large raw data (the notebook downloads it)
+*.xlsx
+*.parquet
+
+# notebook and Python leftovers
+.ipynb_checkpoints/
+__pycache__/
+
+# secrets
+.env
+.env.*
