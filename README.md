@@ -2,9 +2,7 @@
 
 How much it costs to send **$200** home, by route, by type of company and by channel, using the World Bank's Remittance Prices Worldwide data (Q2 2016 to Q3 2025).
 
-**Live site:** [X] (add the Vercel link after deploying)
-
-**Status:** first results live. Next: the full route list from the latest notebook run, then a model of what drives cost.
+**Live site:** https://remittance-cost-tracker.vercel.app/
 
 ## The problem
 
